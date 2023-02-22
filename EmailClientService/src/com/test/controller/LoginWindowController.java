@@ -1,4 +1,4 @@
-package com.test.view;
+package com.test.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
