@@ -4,6 +4,7 @@ import com.test.EmailManager;
 import com.test.controller.BaseController;
 import com.test.controller.LoginWindowController;
 import com.test.controller.MainWindowController;
+import com.test.controller.OptionsWindowController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -30,6 +31,13 @@ public class ViewFactory {
         BaseController controller = new MainWindowController(emailManager, this, "MainWindow.fxml");
         initializeStage(controller);
     }
+
+    public void showOptionsWindow(){
+        System.out.println("options window called");
+        BaseController controller = new OptionsWindowController(emailManager, this, "OptionsWindow.fxml");
+        initializeStage(controller);
+    }
+
     private void initializeStage(BaseController baseController){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(baseController.getFxmlName()));
         fxmlLoader.setController(baseController);
