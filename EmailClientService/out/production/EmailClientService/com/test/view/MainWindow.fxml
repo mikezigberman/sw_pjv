@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="502.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.test.controller.MainWindowController">
    <children>
-      <MenuBar layoutY="-1.0" prefHeight="30.0" prefWidth="700.0">
+      <MenuBar layoutY="-1.0" prefHeight="30.0" prefWidth="700.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -31,8 +31,8 @@
           </Menu>
         </menus>
       </MenuBar>
-      <TreeView fx:id="emailsTreeView" layoutY="29.0" prefHeight="473.0" prefWidth="214.0" />
-      <TableView fx:id="emailsTableView" layoutX="214.0" layoutY="29.0" prefHeight="200.0" prefWidth="486.0">
+      <TreeView fx:id="emailsTreeView" layoutY="29.0" prefHeight="473.0" prefWidth="214.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="29.0" />
+      <TableView fx:id="emailsTableView" layoutX="214.0" layoutY="29.0" prefHeight="200.0" prefWidth="486.0" AnchorPane.leftAnchor="214.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="29.0">
         <columns>
           <TableColumn prefWidth="76.0" text="Sender" />
           <TableColumn prefWidth="95.0" text="Subject" />
@@ -41,6 +41,6 @@
             <TableColumn prefWidth="75.0" text="Date" />
         </columns>
       </TableView>
-      <WebView fx:id="emailWebView" layoutX="214.0" layoutY="229.0" prefHeight="273.0" prefWidth="485.0" />
+      <WebView fx:id="emailWebView" layoutX="214.0" layoutY="229.0" prefHeight="273.0" prefWidth="485.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="215.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="229.0" />
    </children>
 </AnchorPane>
