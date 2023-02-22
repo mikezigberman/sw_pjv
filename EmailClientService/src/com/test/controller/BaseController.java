@@ -5,7 +5,7 @@ import com.test.view.ViewFactory;
 
 public abstract class BaseController {
 
-    private EmailManager emailManager;
+    protected EmailManager emailManager;
 
     public BaseController(EmailManager emailManager, ViewFactory viewFactory, String fxmlName) {
         this.emailManager = emailManager;
@@ -13,7 +13,7 @@ public abstract class BaseController {
         this.fxmlName = fxmlName;
     }
 
-    private ViewFactory viewFactory;
+    protected ViewFactory viewFactory;
     private String fxmlName;
 
     public String getFxmlName() {
