@@ -15,4 +15,8 @@ public abstract class BaseController {
 
     private ViewFactory viewFactory;
     private String fxmlName;
+
+    public String getFxmlName() {
+        return fxmlName;
+    }
 }
