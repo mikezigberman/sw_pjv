@@ -1,0 +1,8 @@
+*{
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+
+.big{
+    -fx-text-fill: #35568c;
+}
