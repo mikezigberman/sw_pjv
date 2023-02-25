@@ -22,15 +22,14 @@ public class EmailTreeItem<String> extends TreeItem<String> {
     }
 
     public ObservableList<EmailMessage> getEmailMessages(){
-        return emailMessages;
+        return  emailMessages;
     }
 
     public void addEmail(Message message) throws MessagingException {
         EmailMessage emailMessage = fetchMessage(message);
         emailMessages.add(emailMessage);
     }
-
-    public void addEmailToTop(Message message) {
+    public void addEmailToTop(Message message) throws MessagingException {
         EmailMessage emailMessage = fetchMessage(message);
         emailMessages.add(0, emailMessage);
     }
@@ -49,7 +48,7 @@ public class EmailTreeItem<String> extends TreeItem<String> {
         if(!messageIsRead){
             incrementMessagesCount();
         }
-        return emailMessage;
+        return  emailMessage;
     }
 
     public void incrementMessagesCount(){
@@ -57,9 +56,14 @@ public class EmailTreeItem<String> extends TreeItem<String> {
         updateName();
     }
 
-    private void updateName(){
-        if(unreadMessagesCount > 0){
-            this.setValue((String)(name + "(" + unreadMessagesCount + ")"));
+    public void decrementMessagesCount(){
+        unreadMessagesCount--;
+        updateName();
+    }
+
+    private void updateName() {
+        if (unreadMessagesCount > 0) {
+            this.setValue((String) (name + "(" + unreadMessagesCount + ")"));
         } else {
             this.setValue(name);
         }

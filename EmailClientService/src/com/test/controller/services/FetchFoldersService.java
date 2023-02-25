@@ -51,7 +51,7 @@ public class FetchFoldersService extends Service<Void> {
             fetchMessagesOnFolder(folder, emailTreeItem);
             addMessageListenerToFolder(folder, emailTreeItem);
             if(folder.getType() == Folder.HOLDS_FOLDERS) {
-                Folder[] subFolders = folder.list();
+                Folder[] subFolders =  folder.list();
                 handleFolders(subFolders, emailTreeItem);
             }
         }
@@ -68,6 +68,7 @@ public class FetchFoldersService extends Service<Void> {
                         emailTreeItem.addEmailToTop(message);
                     } catch (MessagingException ex) {
                         ex.printStackTrace();
+                    }
                 }
             }
 

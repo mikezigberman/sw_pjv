@@ -22,9 +22,7 @@ import java.util.ResourceBundle;
 public class MainWindowController extends BaseController implements Initializable {
 
     @FXML
-    private WebView emailWebView;
-
-    private MessageRendererService messageRendererService;
+    private TreeView<String> emailsTreeView;
 
     @FXML
     private TableView<EmailMessage> emailsTableView;
@@ -45,7 +43,9 @@ public class MainWindowController extends BaseController implements Initializabl
     private TableColumn<EmailMessage, Date> dateCol;
 
     @FXML
-    private TreeView<String> emailsTreeView;
+    private WebView emailWebView;
+
+    private MessageRendererService messageRendererService;
 
     public MainWindowController(EmailManager emailManager, ViewFactory viewFactory, String fxmlName) {
         super(emailManager, viewFactory, fxmlName);
@@ -66,21 +66,26 @@ public class MainWindowController extends BaseController implements Initializabl
         setUpEmailsTableView();
         setUpFolderSelection();
         setUpBoldRows();
-        setMessageRendererService();
+        setUpMessageRendererService();
         setUpMessageSelection();
+
     }
 
     private void setUpMessageSelection() {
         emailsTableView.setOnMouseClicked(event -> {
             EmailMessage emailMessage = emailsTableView.getSelectionModel().getSelectedItem();
             if(emailMessage != null){
+                emailManager.setSelectedMessage(emailMessage);
+                if(!emailMessage.isRead()){
+                    emailManager.setRead();
+                }
                 messageRendererService.setEmailMessage(emailMessage);
                 messageRendererService.restart();
             }
         });
     }
 
-    private void setMessageRendererService() {
+    private void setUpMessageRendererService() {
         messageRendererService = new MessageRendererService(emailWebView.getEngine());
     }
 
@@ -107,8 +112,9 @@ public class MainWindowController extends BaseController implements Initializabl
 
     private void setUpFolderSelection() {
         emailsTreeView.setOnMouseClicked(e->{
-            EmailTreeItem<String> item = (EmailTreeItem<String>) emailsTreeView.getSelectionModel().getSelectedItem();
+            EmailTreeItem<String> item = (EmailTreeItem<String>)emailsTreeView.getSelectionModel().getSelectedItem();
             if (item != null) {
+                emailManager.setSelectedFolder(item);
                 emailsTableView.setItems(item.getEmailMessages());
             }
         });
