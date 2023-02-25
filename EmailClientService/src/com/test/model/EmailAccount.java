@@ -9,6 +9,11 @@ public class EmailAccount {
     private Properties properties;
     private Store store;
 
+    @Override
+    public String toString() {
+        return address;
+    }
+
     public String getAddress() {
         return address;
     }
