@@ -30,11 +30,11 @@ public class EmailMessage {
     public String getSubject(){
         return this.subject.get();
     }
-    public String getSender(){
+    public  String getSender(){
         return this.sender.get();
     }
     public String getRecipient(){
-        return this.sender.get();
+        return this.recipient.get();
     }
     public SizeInteger getSize(){
         return this.size.get();
@@ -46,7 +46,7 @@ public class EmailMessage {
     public boolean isRead() {
         return isRead;
     }
-    public void setRead(boolean read){
+    public void setRead(boolean read) {
         isRead = read;
     }
     public Message getMessage(){

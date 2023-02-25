@@ -61,9 +61,9 @@ public class EmailTreeItem<String> extends TreeItem<String> {
         updateName();
     }
 
-    private void updateName() {
-        if (unreadMessagesCount > 0) {
-            this.setValue((String) (name + "(" + unreadMessagesCount + ")"));
+    private void updateName(){
+        if(unreadMessagesCount > 0){
+            this.setValue((String)(name + "(" + unreadMessagesCount + ")"));
         } else {
             this.setValue(name);
         }

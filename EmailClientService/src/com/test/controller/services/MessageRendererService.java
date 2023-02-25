@@ -17,7 +17,7 @@ public class MessageRendererService extends Service {
     private WebEngine webEngine;
     private StringBuffer stringBuffer;
 
-    public MessageRendererService(WebEngine webEngine){
+    public MessageRendererService(WebEngine webEngine) {
         this.webEngine = webEngine;
         this.stringBuffer = new StringBuffer();
         this.setOnSucceeded(event -> {
@@ -49,14 +49,14 @@ public class MessageRendererService extends Service {
     }
 
     private void loadMessage() throws MessagingException, IOException {
-        stringBuffer.setLength(0);
+        stringBuffer.setLength(0); //clears the SB
         Message message = emailMessage.getMessage();
         String contentType = message.getContentType();
         if(isSimpleType(contentType)){
             stringBuffer.append(message.getContent().toString());
         } else if(isMultipartType(contentType)){
             Multipart multipart = (Multipart) message.getContent();
-            for (int i = multipart.getCount() - 1; i >= 0; i--){
+            for (int i = multipart.getCount() - 1; i>=0; i--){
                 BodyPart bodyPart = multipart.getBodyPart(i);
                 String bodyPartContentType = bodyPart.getContentType();
                 if(isSimpleType(bodyPartContentType)){
@@ -68,8 +68,8 @@ public class MessageRendererService extends Service {
 
     private boolean isSimpleType(String contentType){
         if(contentType.contains("TEXT/HTML") ||
-        contentType.contains("mixed") ||
-        contentType.contains("text")){
+                contentType.contains("mixed")||
+                contentType.contains("text")){
             return true;
         } else {
             return false;

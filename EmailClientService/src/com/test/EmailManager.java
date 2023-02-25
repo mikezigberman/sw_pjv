@@ -8,6 +8,7 @@ import com.test.model.EmailTreeItem;
 import com.test.view.IconResolver;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.TreeItem;
 
 import javax.mail.Flags;
 import javax.mail.Folder;
@@ -18,6 +19,12 @@ public class EmailManager {
 
     private EmailMessage selectedMessage;
     private EmailTreeItem<String> selectedFolder;
+    private ObservableList<EmailAccount> emailAccounts = FXCollections.observableArrayList();
+    private IconResolver iconResolver = new IconResolver();
+
+    public  ObservableList<EmailAccount> getEmailAccounts(){
+        return  emailAccounts;
+    }
 
     public EmailMessage getSelectedMessage() {
         return selectedMessage;
@@ -38,14 +45,6 @@ public class EmailManager {
     private FolderUpdaterService folderUpdaterService;
     //Folder handling:
     private EmailTreeItem<String> foldersRoot = new EmailTreeItem<String>("");
-
-    private ObservableList<EmailAccount> emailAccounts = FXCollections.observableArrayList();
-
-    private IconResolver iconResolver = new IconResolver();
-
-    public ObservableList<EmailAccount> getEmailAccounts(){
-        return emailAccounts;
-    }
 
     public EmailTreeItem<String> getFoldersRoot(){
         return foldersRoot;

@@ -9,8 +9,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Slider;
-import javafx.util.StringConverter;
 import javafx.stage.Stage;
+import javafx.util.StringConverter;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,6 +20,7 @@ public class OptionsWindowController extends BaseController implements Initializ
     public OptionsWindowController(EmailManager emailManager, ViewFactory viewFactory, String fxmlName) {
         super(emailManager, viewFactory, fxmlName);
     }
+
     @FXML
     private Slider fontSizePicker;
 
@@ -27,7 +28,7 @@ public class OptionsWindowController extends BaseController implements Initializ
     private ChoiceBox<ColorTheme> themePicker;
 
     @FXML
-    void applyButtonAction() {
+    void applyBtnAction() {
         viewFactory.setColorTheme(themePicker.getValue());
         viewFactory.setFontSize(FontSize.values()[(int)(fontSizePicker.getValue())]);
         viewFactory.updateAllStyles();
@@ -67,7 +68,6 @@ public class OptionsWindowController extends BaseController implements Initializ
                 return null;
             }
         });
-
         fontSizePicker.valueProperty().addListener((obs, oldVal, newVal) -> {
             fontSizePicker.setValue(newVal.intValue());
         });

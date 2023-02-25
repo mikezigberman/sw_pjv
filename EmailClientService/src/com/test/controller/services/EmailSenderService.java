@@ -6,8 +6,8 @@ import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 
 import javax.mail.*;
-import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
 public class EmailSenderService extends Service<EmailSendingResult> {
@@ -28,7 +28,7 @@ public class EmailSenderService extends Service<EmailSendingResult> {
     protected Task<EmailSendingResult> createTask() {
         return new Task<EmailSendingResult>() {
             @Override
-            protected EmailSendingResult call() {
+            protected EmailSendingResult call(){
                 try {
                     //Create the message:
                     MimeMessage mimeMessage = new MimeMessage(emailAccount.getSession());
@@ -54,7 +54,7 @@ public class EmailSenderService extends Service<EmailSendingResult> {
                 } catch (MessagingException e) {
                     e.printStackTrace();
                     return EmailSendingResult.FAILED_BY_PROVIDER;
-                } catch (Exception e) {
+                }  catch (Exception e) {
                     e.printStackTrace();
                     return EmailSendingResult.FAILED_BY_UNEXPECTED_ERROR;
                 }

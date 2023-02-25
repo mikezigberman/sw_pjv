@@ -6,14 +6,16 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="274.0" prefWidth="459.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane prefHeight="274.0" prefWidth="459.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="180.0" layoutY="172.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="26.0" prefWidth="87.0" text="Login" />
+      <Button layoutX="180.0" layoutY="168.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="26.0" prefWidth="87.0" text="Login" />
       <Label layoutX="41.0" layoutY="31.0" prefHeight="26.0" prefWidth="87.0" text="Email Address" />
       <Label layoutX="41.0" layoutY="102.0" prefHeight="17.0" prefWidth="87.0" text="Password" />
       <TextField fx:id="emailAddressField" layoutX="41.0" layoutY="62.0" />
       <PasswordField fx:id="passwordField" layoutX="41.0" layoutY="126.0" />
-      <Label fx:id="errorLabel" layoutX="151.0" layoutY="214.0" text="Problems with authorization?" />
+      <Label fx:id="errorLabel" layoutX="151.0" layoutY="204.0" text="Problems with authorization?" />
+      <Label layoutX="267.0" layoutY="36.0" text="Welcome to Email Service Client" />
+      <Label layoutX="150.0" layoutY="233.0" text="a Mike Zigberman production" />
+      <Label layoutX="193.0" layoutY="252.0" text="CTU © 2023" />
    </children>
 </AnchorPane>

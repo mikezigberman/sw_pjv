@@ -16,14 +16,14 @@ import java.util.ResourceBundle;
 
 public class LoginWindowController extends BaseController implements Initializable {
 
-        @FXML
-        private TextField emailAddressField;
+    @FXML
+    private Label errorLabel;
 
-        @FXML
-        private Label errorLabel;
+    @FXML
+    private TextField emailAddressFied;
 
-        @FXML
-        private PasswordField passwordField;
+    @FXML
+    private PasswordField passwordField;
 
     public LoginWindowController(EmailManager emailManager, ViewFactory viewFactory, String fxmlName) {
         super(emailManager, viewFactory, fxmlName);
@@ -31,52 +31,50 @@ public class LoginWindowController extends BaseController implements Initializab
 
     @FXML
     void loginButtonAction() {
-        System.out.println("loginButtonAction!!!");
+        System.out.println("loginButtonAction!!");
         if(fieldsAreValid()){
-            EmailAccount emailAccount = new EmailAccount(emailAddressField.getText(), passwordField.getText());
+            EmailAccount emailAccount = new EmailAccount(emailAddressFied.getText(), passwordField.getText());
             LoginService loginService = new LoginService(emailAccount, emailManager);
             loginService.start();
             loginService.setOnSucceeded(event -> {
-                EmailLoginResult emailLoginResult = loginService.getValue();
+                EmailLoginResult emailLoginResult= loginService.getValue();
                 switch (emailLoginResult) {
                     case SUCCESS:
-                        System.out.println("login succesfull" + emailAccount);
-                        if (!viewFactory.isMainViewInitialized()){
+                        System.out.println("login succesfull!!!" + emailAccount);
+                        if(!viewFactory.isMainViewInitialized()){
                             viewFactory.showMainWindow();
                         }
                         Stage stage = (Stage) errorLabel.getScene().getWindow();
                         viewFactory.closeStage(stage);
                         return;
                     case FAILED_BY_CREDENTIALS:
-                        errorLabel.setText("Invalid credentials!");
+                        errorLabel.setText("invalid credentials!");
                         return;
                     case FAILED_BY_UNEXPECTED_ERROR:
-                        errorLabel.setText("Unexpected error!");
+                        errorLabel.setText("unexpected error!");
                         return;
                     default:
                         return;
                 }
             });
         }
-
     }
 
     private boolean fieldsAreValid() {
-        if(emailAddressField.getText().isEmpty()) {
+        if(emailAddressFied.getText().isEmpty()) {
             errorLabel.setText("Please fill email");
             return false;
         }
-        if(emailAddressField.getText().isEmpty()) {
+        if(passwordField.getText().isEmpty()) {
             errorLabel.setText("Please fill password");
             return false;
         }
-
         return true;
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        emailAddressField.setText("slwsbiz@gmail.com");
+        emailAddressFied.setText("slwsbiz@gmail.com");
         passwordField.setText("QwErTyUiOp{]");
     }
 }

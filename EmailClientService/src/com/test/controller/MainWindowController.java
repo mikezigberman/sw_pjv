@@ -18,11 +18,8 @@ import java.util.ResourceBundle;
 
 public class MainWindowController extends BaseController implements Initializable {
 
-    private MenuItem markUnreadMenuItem = new MenuItem("mark is unread");
-
+    private MenuItem markUnreadMenuItem = new MenuItem("mark as unread");
     private MenuItem deleteMessageMenuItem = new MenuItem("delete message");
-
-
     @FXML
     private TreeView<String> emailsTreeView;
 
@@ -61,7 +58,6 @@ public class MainWindowController extends BaseController implements Initializabl
     void addAccountAction() {
         viewFactory.showLoginWindow();
     }
-
     @FXML
     void composeMessageAction() {
         viewFactory.showComposeMessageWindow();
@@ -76,6 +72,7 @@ public class MainWindowController extends BaseController implements Initializabl
         setUpMessageRendererService();
         setUpMessageSelection();
         setUpContextMenus();
+
     }
 
     private void setUpContextMenus() {

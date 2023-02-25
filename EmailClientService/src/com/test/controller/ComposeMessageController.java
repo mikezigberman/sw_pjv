@@ -18,34 +18,35 @@ import java.util.ResourceBundle;
 public class ComposeMessageController extends BaseController implements Initializable {
 
     @FXML
-    private Label errorLabel;
-
-    @FXML
-    private HTMLEditor htmlEditor;
-
-    @FXML
-    private TextField recipientTextField;
+    private TextField recipientTextFIeld;
 
     @FXML
     private TextField subjectTextField;
 
     @FXML
+    private HTMLEditor htmlEditor;
+
+    @FXML
+    private Label errorLabel;
+
+    @FXML
     private ChoiceBox<EmailAccount> emailAccountChoice;
+
 
     @FXML
     void sendButtonAction() {
         EmailSenderService emailSenderService = new EmailSenderService(
                 emailAccountChoice.getValue(),
                 subjectTextField.getText(),
-                recipientTextField.getText(),
+                recipientTextFIeld.getText(),
                 htmlEditor.getHtmlText()
         );
         emailSenderService.start();
-        emailSenderService.setOnSucceeded(e -> {
+        emailSenderService.setOnSucceeded(e->{
             EmailSendingResult emailSendingResult = emailSenderService.getValue();
-            switch (emailSendingResult){
+            switch (emailSendingResult) {
                 case SUCCESS:
-                    Stage stage = (Stage) recipientTextField.getScene().getWindow();
+                    Stage stage = (Stage) recipientTextFIeld.getScene().getWindow();
                     viewFactory.closeStage(stage);
                     break;
                 case FAILED_BY_PROVIDER:

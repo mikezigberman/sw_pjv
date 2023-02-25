@@ -14,6 +14,7 @@ public class FolderUpdaterService extends Service {
         this.folderList = folderList;
     }
 
+
     @Override
     protected Task createTask() {
         return new Task() {

@@ -5,6 +5,7 @@ import javax.mail.Store;
 import java.util.Properties;
 
 public class EmailAccount {
+
     private String address;
     private String password;
     private Properties properties;
@@ -20,11 +21,6 @@ public class EmailAccount {
 
     private Session session;
 
-    @Override
-    public String toString() {
-        return address;
-    }
-
     public String getAddress() {
         return address;
     }
@@ -39,6 +35,11 @@ public class EmailAccount {
 
     public void setProperties(Properties properties) {
         this.properties = properties;
+    }
+
+    @Override
+    public String toString() {
+        return address;
     }
 
     public Store getStore() {
