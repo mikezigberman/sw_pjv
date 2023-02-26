@@ -6,9 +6,9 @@ module EmailClientService{
         requires activation;
         requires java.mail;
 
-        opens com.test;
-        opens com.test.view;
-        opens com.test.controller;
-        opens com.test.model;
+        opens com;
+        opens com.view;
+        opens com.controller;
+        opens com.model;
 
 }
