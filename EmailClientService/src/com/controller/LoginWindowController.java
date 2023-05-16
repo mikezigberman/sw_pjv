@@ -20,7 +20,7 @@ public class LoginWindowController extends BaseController implements Initializab
     private Label errorLabel;
 
     @FXML
-    private TextField emailAddressFied;
+    private TextField emailAddressField;
 
     @FXML
     private PasswordField passwordField;
@@ -33,7 +33,7 @@ public class LoginWindowController extends BaseController implements Initializab
     void loginButtonAction() {
         System.out.println("loginButtonAction!!");
         if(fieldsAreValid()){
-            EmailAccount emailAccount = new EmailAccount(emailAddressFied.getText(), passwordField.getText());
+            EmailAccount emailAccount = new EmailAccount(emailAddressField.getText(), passwordField.getText());
             LoginService loginService = new LoginService(emailAccount, emailManager);
             loginService.start();
             loginService.setOnSucceeded(event -> {
@@ -61,7 +61,7 @@ public class LoginWindowController extends BaseController implements Initializab
     }
 
     private boolean fieldsAreValid() {
-        if(emailAddressFied.getText().isEmpty()) {
+        if(emailAddressField.getText().isEmpty()) {
             errorLabel.setText("Please fill email");
             return false;
         }
@@ -74,7 +74,7 @@ public class LoginWindowController extends BaseController implements Initializab
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        emailAddressFied.setText("slwsbiz@gmail.com");
+        emailAddressField.setText("slwsbiz@gmail.com");
         passwordField.setText("QwErTyUiOp{]");
     }
 }

@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.web.HTMLEditor?>
 
-<AnchorPane prefHeight="654.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="654.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="28.0" layoutY="79.0" prefHeight="17.0" prefWidth="70.0" text="Recipient:" />
       <Label layoutX="27.0" layoutY="118.0" prefHeight="17.0" prefWidth="62.0" text="Subject:" />
