@@ -60,6 +60,7 @@ public class EmailAccount {
         properties.put("mail.smtps.host", "smtp.gmail.com");
         properties.put("mail.smtps.auth", "true");
         properties.put("outgoingHost", "smtp.gmail.com");
-        //properties.put("mail.smtps.port", "587");
+        properties.put("mail.smtps.port", "587");
+        properties.put("mail.smtps.ssl.enable", "true");
     }
 }
