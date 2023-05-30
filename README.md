@@ -186,3 +186,16 @@ emailSenderService.start();
 ```
 
 #### Each of these files plays a specific role in the functionality of the email client and interacts with other classes and services to complete the application.
+
+### Launch of the project:
+
+1. Make sure you have Java Development Kit (JDK) version 8 or higher installed on your computer.
+2. Do a git clone <repository link> on your computer's desktop.
+3. Open your development environment (such as IntelliJ IDEA or Eclipse).
+4. Import the "Email Client Service" project into the development environment as a Java project.
+5. Install all the necessary dependencies and libraries (IDE will tell you exactly what you need to install to successfully launch the project :).
+6. Locate and open the Launcher.java class, which contains the main() method, which will be the entry point to the application.
+7. Run the application by clicking the "Run" button or using the appropriate command in the development environment.
+Note: Depending on the development environment used and the project configuration, the startup procedure may vary slightly. Make sure you follow the instructions that are appropriate for your development environment and project.
+
+### After successfully launching the "Email Client Service" project, you will be able to use the functionality of the email client, including sending and receiving emails, viewing folders, and reading the contents of emails. Manage your email accounts and enjoy a user-friendly email interface.
