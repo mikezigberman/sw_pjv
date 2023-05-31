@@ -199,3 +199,7 @@ emailSenderService.start();
 Note: Depending on the development environment used and the project configuration, the startup procedure may vary slightly. Make sure you follow the instructions that are appropriate for your development environment and project.
 
 ### After successfully launching the "Email Client Service" project, you will be able to use the functionality of the email client, including sending and receiving emails, viewing folders, and reading the contents of emails. Manage your email accounts and enjoy a user-friendly email interface.
+
+## Evaluation  
+  
+<img width="287" alt="Screenshot 2023-05-31 at 12 24 04" src="https://github.com/mikezigberman/sw_pjv/assets/30218257/0c4ffc4a-96d9-4b8a-ab87-56ed885351d8">
