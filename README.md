@@ -1,5 +1,6 @@
 # (sw_pjv) Semester work on the subject of programming in Java
-## Semester work
+  
+## <a id="description"> Semester work </a>
 
 Part of the student's assessment can be semester work. Students should start thinking up assignments as early as the second week of the semester. Consult the assignment right from the end of the semester with your trainer.
 
@@ -17,7 +18,7 @@ The thesis should demonstrate, in addition to the creativity of the student, his
 
 An example would be a space shooter for two players with aliens controlled by artificial intelligence.
 
-# Project Name: Email Client Service
+# <a id="projectdoc">Project Name: Email Client Service</a>
 
 ## Objective of the project:
 The goal of the project is to develop an email client that allows the user to manage their email messages, send and receive emails, view folders, and display and read the contents of emails.
@@ -187,7 +188,8 @@ emailSenderService.start();
 
 #### Each of these files plays a specific role in the functionality of the email client and interacts with other classes and services to complete the application.
 
-### Launch of the project:
+
+### <a id="launch"> Launch of the project: </a>
 
 1. Make sure you have Java Development Kit (JDK) version 8 or higher installed on your computer.
 2. Do a git clone <repository link> on your computer's desktop.
@@ -199,7 +201,7 @@ emailSenderService.start();
 Note: Depending on the development environment used and the project configuration, the startup procedure may vary slightly. Make sure you follow the instructions that are appropriate for your development environment and project.
 
 ### After successfully launching the "Email Client Service" project, you will be able to use the functionality of the email client, including sending and receiving emails, viewing folders, and reading the contents of emails. Manage your email accounts and enjoy a user-friendly email interface.
-
-## Evaluation  
+  
+## <a id="evaluation"> Evaluation </a>  
   
 <img width="287" alt="Screenshot 2023-05-31 at 12 24 04" src="https://github.com/mikezigberman/sw_pjv/assets/30218257/0c4ffc4a-96d9-4b8a-ab87-56ed885351d8">
