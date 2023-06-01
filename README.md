@@ -180,7 +180,7 @@ fetchFoldersService.fetchFolders();
 import com.controller.services.EmailSenderService;
 
 // Create an instance of the mail service
-EmailSenderService emailSenderService = new EmailSenderService(emailAccount, "Тема письма", "recipient@example.com", "Содержимое письма");
+EmailSenderService emailSenderService = new EmailSenderService(emailAccount, "Letter subject", "recipient@example.com", "Email content");
 
 // Sending letter
 emailSenderService.start();
